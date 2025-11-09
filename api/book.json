@@ -1,0 +1,188 @@
+[
+  {
+    "id": "intro-1",
+    "title": "Meet Max, Harvey and Rose",
+    "page": 2,
+    "text": "Max is full of ideas, Harvey loves facts, and Rose encourages everyone. Today they’re starting a tiny garden of microgreens at home. Microgreens are baby plants you harvest young for fresh flavour and nutrients."
+  },
+  {
+    "id": "intro-2",
+    "title": "What are microgreens?",
+    "page": 3,
+    "text": "Microgreens are seeds grown for 7–14 days until the first small leaves appear. You snip them above the soil and enjoy them fresh. They are simple to grow indoors on a bright windowsill."
+  },
+  {
+    "id": "kit-1",
+    "title": "What’s in the kit?",
+    "page": 4,
+    "text": "2 half coconut shell planters (empty); 10 coco-coir pellets; fine mist spray bottle; 3 seed tins (choose from radish, broccoli, pea, sunflower, kale, red cabbage, rocket, spring onion); wooden spoon for seeds and spreading coir; plant labels; Microgreen Explorer’s Guide; bee-friendly seeded paper; quest/certificate."
+  },
+  {
+    "id": "safety-1",
+    "title": "Safety first",
+    "page": 5,
+    "text": "Wash hands and tools. Supervise children with water and scissors. Keep the growing area tidy and dry around the shells. Check seed allergies: brassicas, sunflower, pea/legume, and alliums."
+  },
+  {
+    "id": "setup-1",
+    "title": "Prepare the coco coir",
+    "page": 6,
+    "text": "Place pellets in a clean bowl. Add water a little at a time until they fluff up. Use the wooden spoon to spread coir evenly in your coconut shell, about 1–2 cm deep. The coir should be damp, not soggy."
+  },
+  {
+    "id": "sowing-1",
+    "title": "Sowing your seeds",
+    "page": 7,
+    "text": "Sprinkle seeds in a single, even layer—no big piles. Press them gently so they touch the coir. Mist lightly so all seeds are damp. Label your shells so you remember what’s what."
+  },
+  {
+    "id": "darkstage-1",
+    "title": "Dark stage (2–3 days)",
+    "page": 8,
+    "text": "Cover the shell loosely (a clean plate or card) to create a cosy ‘dark stage’. This helps roots grab hold. Peek daily and mist if the surface looks dry. Keep it slightly damp."
+  },
+  {
+    "id": "lightstage-1",
+    "title": "Into the light",
+    "page": 9,
+    "text": "When you see sprouts pushing up, remove the cover and give bright, indirect light. A sunny windowsill works; avoid strong midday sun. Mist to keep the coir damp, not wet."
+  },
+  {
+    "id": "watering-1",
+    "title": "Watering basics",
+    "page": 10,
+    "text": "Mist once or twice a day depending on room warmth. If leaves look droopy or coir feels dry, add a few extra mists. If it looks soggy or smells off, ease up and let it air."
+  },
+  {
+    "id": "trouble-root-1",
+    "title": "Roots or mould?",
+    "page": 11,
+    "text": "Root hairs look like tiny white fuzz along stems—normal and friendly. Fuzzy patches that spread across the surface and smell unpleasant may be mould. Improve airflow, avoid over-watering, and clean tools."
+  },
+  {
+    "id": "trouble-light-1",
+    "title": "Leggy shoots",
+    "page": 12,
+    "text": "If stems are long and bendy with small leaves, they need more light. Move to a brighter spot (indirect light) and rotate the shell daily so shoots grow upright."
+  },
+  {
+    "id": "trouble-wet-1",
+    "title": "Too wet or smelly?",
+    "page": 13,
+    "text": "If the surface looks shiny or there’s a musty smell, you’re over-misting. Give the shell a day with fewer sprays and better airflow. Harvest what looks fresh and start a new tray if needed."
+  },
+  {
+    "id": "harvest-1",
+    "title": "When to harvest",
+    "page": 14,
+    "text": "Most microgreens are ready 7–14 days after sowing. Look for the first pair of true leaves and sturdy stems. Use clean scissors to snip just above the coir."
+  },
+  {
+    "id": "harvest-2",
+    "title": "After cutting",
+    "page": 15,
+    "text": "Rinse gently in cold water and pat dry with a clean towel. Enjoy fresh for the best taste and crunch. Store leftovers in a lidded container lined with a dry kitchen towel."
+  },
+  {
+    "id": "eat-ideas-1",
+    "title": "Easy ways to eat microgreens",
+    "page": 16,
+    "text": "Sprinkle on cheese sandwiches, omelettes, baked potatoes, soups, and salads. Add them at the end so they stay crisp. Try a small handful on toast with hummus or cream cheese."
+  },
+  {
+    "id": "nutrition-broccoli",
+    "title": "Nutrition — Broccoli microgreens",
+    "page": 17,
+    "text": "Broccoli microgreens provide vitamin C, K, A and folate and contain sulforaphane. Vitamin C contributes to normal immune function and protection of cells from oxidative stress. Vitamin K contributes to normal blood clotting and maintenance of normal bones."
+  },
+  {
+    "id": "nutrition-kale",
+    "title": "Nutrition — Kale microgreens",
+    "page": 18,
+    "text": "Kale microgreens are rich in vitamin K and A, with vitamin C too. Vitamin K contributes to normal blood clotting and bone maintenance. Vitamin A contributes to normal vision and skin."
+  },
+  {
+    "id": "nutrition-redcabbage",
+    "title": "Nutrition — Red cabbage microgreens",
+    "page": 19,
+    "text": "Red cabbage microgreens provide vitamin C and colourful plant pigments (anthocyanins). Vitamin C contributes to normal immune function and protection of cells from oxidative stress."
+  },
+  {
+    "id": "nutrition-radish",
+    "title": "Nutrition — Radish microgreens",
+    "page": 20,
+    "text": "Radish microgreens have vitamin C and peppery glucosinolates. Vitamin C contributes to normal immune function and reduction of tiredness and fatigue."
+  },
+  {
+    "id": "nutrition-pea",
+    "title": "Nutrition — Pea shoots",
+    "page": 21,
+    "text": "Pea shoots provide vitamin K, C and folate. Vitamin K contributes to normal blood clotting and bone maintenance; folate contributes to normal psychological function and reduction of tiredness and fatigue."
+  },
+  {
+    "id": "nutrition-sunflower",
+    "title": "Nutrition — Sunflower shoots",
+    "page": 22,
+    "text": "Sunflower shoots provide vitamin E and plant protein. Vitamin E contributes to the protection of cells from oxidative stress."
+  },
+  {
+    "id": "nutrition-rocket",
+    "title": "Nutrition — Rocket (arugula)",
+    "page": 23,
+    "text": "Rocket microgreens are peppery and contain vitamin K and naturally occurring nitrates. Vitamin K contributes to normal blood clotting; nitrates can support normal blood flow during exercise via nitric oxide pathways."
+  },
+  {
+    "id": "nutrition-onion",
+    "title": "Nutrition — Spring onion microgreens",
+    "page": 24,
+    "text": "Spring onion microgreens bring bright flavour and contain plant compounds such as quercetin. Use as a garnish on savoury dishes. (General educational note only.)"
+  },
+  {
+    "id": "allergens-1",
+    "title": "Allergens",
+    "page": 25,
+    "text": "Check seeds and family sensitivities: brassicas (broccoli, kale, radish, red cabbage, rocket), sunflower, pea/legume, alliums (onion). If unsure, ask a grown-up or health professional."
+  },
+  {
+    "id": "cleanup-1",
+    "title": "Tidying up",
+    "page": 26,
+    "text": "Compost used coir if you can. Wash the coconut shells, spray bottle, and scissors with warm soapy water. Dry well before storing for next time."
+  },
+  {
+    "id": "beepaper-1",
+    "title": "Bee-friendly paper (planting)",
+    "page": 27,
+    "text": "Moisten the bee paper and lay it on a shallow bed of coir or potting soil. Keep it damp and in bright light. Some seeds may sprout indoors; most will bloom outdoors in spring."
+  },
+  {
+    "id": "bee-outdoors-1",
+    "title": "Planting bee paper outdoors",
+    "page": 28,
+    "text": "If it’s autumn or winter, you can plant the paper in a pot or a patch and let the seeds sleep through winter, waking in spring. In colder spells, keep it dry and plant in spring."
+  },
+  {
+    "id": "quest-1",
+    "title": "Explorer Quest & certificate",
+    "page": 29,
+    "text": "Complete simple tasks: label your shells; take a photo of day 3, day 7, and harvest day; try microgreens on a new food. Tick each step and collect your Mini Green Grower certificate."
+  },
+  {
+    "id": "faq-1",
+    "title": "FAQ — My seeds didn’t sprout",
+    "page": 30,
+    "text": "Check dates and keep the coir evenly damp. Make sure seeds are pressed to the surface and had 2–3 days in the dark stage. Try a warmer spot away from cold drafts."
+  },
+  {
+    "id": "faq-2",
+    "title": "FAQ — Windowsill too hot or cold?",
+    "page": 31,
+    "text": "Microgreens like steady warmth and light. Avoid radiators and cold draughts. Bright, indirect light works best; rotate the shells daily for even growth."
+  },
+  {
+    "id": "glossary-1",
+    "title": "Glossary",
+    "page": 32,
+    "text": "Coco coir: soft fibre from coconuts used as a growing medium. Dark stage: first 2–3 days covered so roots anchor. True leaves: the next set of leaves after the seed leaves."
+  }
+]
