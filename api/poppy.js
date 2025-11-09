@@ -10,6 +10,28 @@ export default async function handler(req, res) {
 
   try {
     const { q = "", history = [] } = req.body || {};
+// ---- kit helpers (no DB needed) ----
+let KIT = null;
+
+async function loadKit(baseUrl = "") {
+  if (KIT) return KIT;
+  try {
+    const url = `${baseUrl.replace(/\/$/, "")}/kit.json`;
+    const resp = await fetch(url, { cache: "no-store" });
+    if (resp.ok) KIT = await resp.json();
+  } catch {}
+  return KIT;
+}
+
+function looksLikeKitQuestion(q = "") {
+  const s = q.toLowerCase();
+  return (
+    /what(?:'| i)?s.*(in|inside|included).*kit/.test(s) ||
+    /kit contents/.test(s) ||
+    /what.*do i get/.test(s) ||
+    /what.*included/.test(s)
+  );
+}
 
     // 1) Safety check
     const modResp = await fetch("https://api.openai.com/v1/moderations", {
