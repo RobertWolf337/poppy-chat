@@ -1,4 +1,5 @@
 // api/poppy.js — Poppy.ai server (Vercel + OpenAI)
+// ─────────────────────────────────────────────────────────────────────────────
 
 // ----------------- TOP-LEVEL HELPERS (outside the handler) -----------------
 
@@ -62,12 +63,30 @@ async function findRelevantExcerpts(q, req) {
     .map(x => x.ch);
 }
 
-// ---- Tiny helpers for style variety ----
+// ---- Output cleaner: remove AI-ish punctuation/openers (server side) ----
+function cleanReply(text = "") {
+  let t = String(text);
+
+  // Replace em/en dashes with a comma + space
+  t = t.replace(/[—–]/g, ", ");
+
+  // Trim common filler openers at the start
+  t = t.replace(/^(sure|absolutely|of course|certainly|great question|here's|here is),?\s+/i, "");
+
+  // Neaten spaces and punctuation
+  t = t.replace(/\s{2,}/g, " ");          // collapse double spaces
+  t = t.replace(/\s+([.,!?;:])/g, "$1");  // no space before punctuation
+  t = t.trim();
+
+  return t;
+}
+
+// ---- Tiny helpers for style variety (kept subtle; no filler prompts) ----
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
 const STYLE_SEEDS = [
   "Use one friendly emoji at the end.",
-  "Start with a warm interjection (e.g., “Great question!”), then answer simply.",
+  "Answer simply and directly; no filler openers.",
   "Include one kid-friendly tip phrased as a suggestion.",
   "End with a tiny safety reminder if relevant.",
   "Keep it very concise: two sentences max."
@@ -104,7 +123,7 @@ export default async function handler(req, res) {
       if (kit && kit.items) {
         const list = kit.items.map(i => `- ${i}`).join("\n");
         const reply = `${kit.title}\n${list}\n\nNotes: ${kit.notes}`;
-        return res.status(200).json({ reply });
+        return res.status(200).json({ reply: cleanReply(reply) });
       }
     }
 
@@ -122,7 +141,7 @@ export default async function handler(req, res) {
       return res.json({ reply: "I can’t help with that, but I’m happy to answer questions about growing microgreens safely." });
     }
 
-    // 2) Build system rules
+    // 2) Build system rules (includes style guardrails)
     const SYSTEM_PROMPT = (process.env.POPPY_SYSTEM_PROMPT || `
 You are Poppy, the friendly guide for Mini Green Growers.
 Write 2–4 short, warm sentences in UK English.
@@ -137,6 +156,9 @@ Nutrition mode:
 
 Language & style:
 - Use UK English spelling (colour, organise, litre, programme) and °C, grams, millilitres.
+- No em dashes (—) or en dashes (–); prefer commas or full stops.
+- Avoid filler openers like “Sure,” “Absolutely,” “Great question,” “As an AI,” etc.
+- Keep sentences short and plain. No “In conclusion.”
 
 Character cameos:
 - (Max:) playful ideas; (Harvey:) a quick fact; (Rose:) gentle encouragement.
@@ -164,7 +186,7 @@ Character cameos:
         "\nIf you mention a page, format like (page " + excerpts[0].page + ").";
     }
 
-    // 4) Light variation
+    // 4) Light variation (no filler)
     const seed = pick(STYLE_SEEDS);
     const shape = pick(ANSWER_SHAPES);
 
@@ -212,7 +234,7 @@ Character cameos:
 
     const data = await chatResp.json();
     const reply = data?.choices?.[0]?.message?.content?.trim() || "Sorry, I didn’t catch that.";
-    return res.status(200).json({ reply });
+    return res.status(200).json({ reply: cleanReply(reply) });
 
   } catch (e) {
     return res.status(500).json({ reply: "Something went wrong. Please try again." });
