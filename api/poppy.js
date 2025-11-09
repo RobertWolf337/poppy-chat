@@ -1,9 +1,10 @@
-// api/poppy.js — one-file server for Poppy (no installs needed)
+// api/poppy.js — Poppy.ai server (Vercel + OpenAI)
 
-// ---------- simple helpers available to the whole file ----------
+// ----------------- TOP-LEVEL HELPERS (outside the handler) -----------------
 
-// Load kit.json from your own domain (cached in memory per server instance)
+// ---- KIT: load kit.json and detect “what’s in the kit?” questions ----
 let KIT = null;
+
 async function loadKit(baseUrl = "") {
   if (KIT) return KIT;
   try {
@@ -14,7 +15,6 @@ async function loadKit(baseUrl = "") {
   return KIT;
 }
 
-// Detect “what’s in the kit?” style questions
 function looksLikeKitQuestion(q = "") {
   const s = (q || "").toLowerCase();
   return (
@@ -25,7 +25,44 @@ function looksLikeKitQuestion(q = "") {
   );
 }
 
-// Pick one at random to keep replies feeling fresh (safe, tiny variations)
+// ---- BOOK: load book.json + tiny keyword search (caches in memory) ----
+let BOOK = null;
+
+async function loadBook(baseUrl = "") {
+  if (BOOK) return BOOK;
+  try {
+    const url = `${baseUrl.replace(/\/$/, "")}/book.json`;
+    const resp = await fetch(url, { cache: "no-store" });
+    if (resp.ok) BOOK = await resp.json();
+  } catch {}
+  return BOOK || [];
+}
+
+function scoreChunk(q, chunk) {
+  const text = (chunk.text || "").toLowerCase();
+  const terms = (q || "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+  let s = 0;
+  for (const t of terms) if (text.includes(t)) s += 1;
+  // bonus for phrase hits
+  const phrase = (q || "").toLowerCase().trim();
+  if (phrase.length > 6 && text.includes(phrase)) s += 2;
+  return s;
+}
+
+async function findRelevantExcerpts(q, req) {
+  const host = process.env.PUBLIC_BASE_URL ||
+               (req?.headers?.host ? `https://${req.headers.host}` : "");
+  const book = await loadBook(host);
+  if (!book.length || !q) return [];
+  return book
+    .map(ch => ({ ch, s: scoreChunk(q, ch) }))
+    .filter(x => x.s > 0)
+    .sort((a, b) => b.s - a.s)
+    .slice(0, 3)
+    .map(x => x.ch);
+}
+
+// ---- Tiny helpers for style variety ----
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
 const STYLE_SEEDS = [
@@ -42,7 +79,7 @@ const ANSWER_SHAPES = [
   "Pattern C: 1) Quick steps (1–3). 2) Safety note if helpful."
 ];
 
-// ---------- main handler ----------
+// ------------------------------ HANDLER ------------------------------------
 
 export default async function handler(req, res) {
   // CORS
@@ -57,10 +94,11 @@ export default async function handler(req, res) {
   try {
     const { q = "", history = [] } = req.body || {};
 
+    // Derive a base URL for loading kit/book JSON
+    const host = process.env.PUBLIC_BASE_URL ||
+                 (req?.headers?.host ? `https://${req.headers.host}` : "");
+
     // 0) Hard answer for kit contents (no model; avoids hallucinations)
-    const host =
-      process.env.PUBLIC_BASE_URL ||
-      (req?.headers?.host ? `https://${req.headers.host}` : "");
     if (looksLikeKitQuestion(q)) {
       const kit = await loadKit(host);
       if (kit && kit.items) {
@@ -70,7 +108,7 @@ export default async function handler(req, res) {
       }
     }
 
-    // 1) Safety check (OpenAI moderation)
+    // 1) Safety moderation
     const modResp = await fetch("https://api.openai.com/v1/moderations", {
       method: "POST",
       headers: {
@@ -84,7 +122,7 @@ export default async function handler(req, res) {
       return res.json({ reply: "I can’t help with that, but I’m happy to answer questions about growing microgreens safely." });
     }
 
-    // 2) Build Poppy’s rules
+    // 2) Build system rules
     const SYSTEM_PROMPT = (process.env.POPPY_SYSTEM_PROMPT || `
 You are Poppy, the friendly guide for Mini Green Growers.
 Write 2–4 short, warm sentences in UK English.
@@ -99,43 +137,54 @@ Nutrition mode:
 
 Language & style:
 - Use UK English spelling (colour, organise, litre, programme) and °C, grams, millilitres.
+
+Character cameos:
+- (Max:) playful ideas; (Harvey:) a quick fact; (Rose:) gentle encouragement.
+- At most ONE cameo line per answer. If used last turn, skip it this turn.
 `).trim();
 
-    // Optional knowledge block (nutrition, kit bullets, etc.)
     const KNOWLEDGE = (process.env.POPPY_KNOWLEDGE || "").trim();
 
-    // Optional sitemap: an array of { name, url }. If absent, Poppy should not add links.
+    // Optional sitemap (controls links)
     let sitemap = [];
-    try {
-      sitemap = JSON.parse(process.env.POPPY_SITEMAP || "[]");
-    } catch {}
+    try { sitemap = JSON.parse(process.env.POPPY_SITEMAP || "[]"); } catch {}
     const SITEMAP_TEXT = sitemap.length
       ? "Here are the only links you may share (use exact URLs):\n" +
         sitemap.map(i => `- ${i.name}: ${i.url}`).join("\n") +
         "\nIf nothing fits, do not include a link."
       : "No sitemap is configured. Do not include any 'Link:' line in answers.";
 
-    // Light variety
+    // 3) Booklet context (keyword-ranked excerpts)
+    const excerpts = await findRelevantExcerpts(q, req);
+    let contextBlock = "";
+    if (excerpts.length) {
+      contextBlock =
+        "Use ONLY these booklet excerpts when answering. If unsure, say you’re not sure.\n" +
+        excerpts.map(e => `- [${e.title} p.${e.page}] ${e.text}`).join("\n") +
+        "\nIf you mention a page, format like (page " + excerpts[0].page + ").";
+    }
+
+    // 4) Light variation
     const seed = pick(STYLE_SEEDS);
     const shape = pick(ANSWER_SHAPES);
 
-    // Final prompt sent as the system message
+    // Final prompt
     const FULL_PROMPT = [
       SYSTEM_PROMPT,
+      contextBlock,
       KNOWLEDGE ? "Reference notes:\n" + KNOWLEDGE : "",
       SITEMAP_TEXT,
       "Style seed: " + seed,
-      "Use this answer shape: " + shape,
-      "If you used a cameo in the previous turn, skip it this time."
+      "Use this answer shape: " + shape
     ].filter(Boolean).join("\n\n");
 
-    // 3) Ask OpenAI (chat)
+    // 5) Call OpenAI
     const MODEL = process.env.POPPY_MODEL || "gpt-4o-mini";
     const temperature = Number(process.env.POPPY_TEMPERATURE ?? 0.5);
     const top_p = Number(process.env.POPPY_TOP_P ?? 0.9);
     const max_tokens = Number(process.env.POPPY_MAX_TOKENS ?? 400);
 
-    const chatBody = {
+    const body = {
       model: MODEL,
       temperature,
       top_p,
@@ -153,19 +202,16 @@ Language & style:
         "Content-Type": "application/json",
         "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
       },
-      body: JSON.stringify(chatBody)
+      body: JSON.stringify(body)
     });
 
     if (!chatResp.ok) {
       const errText = await chatResp.text();
-      return res.status(500).json({ reply: "Server error from AI service." , detail: errText });
+      return res.status(500).json({ reply: "Server error from AI service.", detail: errText });
     }
 
     const data = await chatResp.json();
-    const reply =
-      data?.choices?.[0]?.message?.content?.trim() ||
-      "Sorry, I didn’t catch that.";
-
+    const reply = data?.choices?.[0]?.message?.content?.trim() || "Sorry, I didn’t catch that.";
     return res.status(200).json({ reply });
 
   } catch (e) {
