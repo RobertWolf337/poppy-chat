@@ -1,188 +1,139 @@
-[
-  {
-    "id": "intro-1",
-    "title": "Meet Max, Harvey and Rose",
-    "page": 2,
-    "text": "Max is full of ideas, Harvey loves facts, and Rose encourages everyone. Today they’re starting a tiny garden of microgreens at home. Microgreens are baby plants you harvest young for fresh flavour and nutrients."
+{
+  "meta": {
+    "title": "Microgreen Explorer’s Guide",
+    "version": "1.3.0",
+    "updated": "2025-12-20",
+    "uk_english": true,
+    "style_rules": { "no_dashes": true, "short_sentences": true, "friendly_tone": true }
   },
-  {
-    "id": "intro-2",
-    "title": "What are microgreens?",
-    "page": 3,
-    "text": "Microgreens are seeds grown for 7–14 days until the first small leaves appear. You snip them above the soil and enjoy them fresh. They are simple to grow indoors on a bright windowsill."
+
+  "characters": [
+    { "name": "Max", "traits": ["energetic", "curious"], "voice_hint": "short and excited" },
+    { "name": "Harvey", "traits": ["calm", "fact focused"], "voice_hint": "clear and steady" },
+    { "name": "Rosie", "traits": ["encouraging", "kind"], "voice_hint": "gentle and warm" }
+  ],
+
+  "sections": [
+    { "id": "intro-1", "title": "Meet Max, Harvey and Rosie", "page": 2, "text": "Max is full of ideas. Harvey loves facts. Rosie encourages everyone. Today they are starting a tiny garden of microgreens at home. Microgreens are baby plants you harvest young for fresh flavour and nutrients." },
+    { "id": "intro-2", "title": "What are microgreens?", "page": 3, "text": "Microgreens are seeds grown for 7 to 14 days until the first small leaves appear. You snip them above the soil and enjoy them fresh. They are simple to grow indoors on a bright windowsill." },
+    { "id": "kit-1", "title": "What is in the kit?", "page": 4, "text": "2 half coconut shell planters. 10 coco coir pellets. 3 seed tins that you choose from the microgreens list. 1 wooden spoon for seeds and for spreading coir. Explorer guide. Bee friendly paper. Quest and certificate." },
+    { "id": "safety-1", "title": "Safety first", "page": 5, "text": "Wash hands and tools. An adult should help with water and scissors. Keep the growing area tidy and dry around the shells. Check seed families for possible allergies. Brassicas. Sunflower. Pea and other legumes. Alliums." },
+    { "id": "setup-1", "title": "Prepare the coco coir", "page": 6, "text": "Place pellets in a clean bowl. Add water a little at a time until they fluff up. Use the wooden spoon to spread coir evenly in your coconut shell. Aim for one to two centimetres deep. The coir should be damp. Not soggy." },
+    { "id": "sowing-1", "title": "Sowing your seeds", "page": 7, "text": "Sprinkle seeds in a single even layer. No big piles. Press them gently so they touch the coir. Mist lightly so all seeds are damp. Label your shells so you remember what is what." },
+    { "id": "darkstage-1", "title": "Dark stage", "page": 8, "text": "Cover the shell loosely with a clean plate or card. This cosy time helps roots grab hold. Peek daily. Mist if the surface looks dry. Keep it slightly damp for two to three days." },
+    { "id": "lightstage-1", "title": "Into the light", "page": 9, "text": "When you see sprouts pushing up, remove the cover and give bright indirect light. A sunny windowsill works. Avoid strong midday sun. Mist to keep the coir damp. Not wet." },
+    { "id": "watering-1", "title": "Watering basics", "page": 10, "text": "Mist once or twice a day. Warm rooms may need more. If leaves droop or coir feels dry, add a few extra mists. If it looks soggy or smells off, ease up and let it air." },
+    { "id": "trouble-root-1", "title": "Roots or mould", "page": 11, "text": "Root hairs look like tiny white fuzz along stems. This is normal. Fuzzy patches that spread across the surface and smell unpleasant may be mould. Improve airflow. Avoid over watering. Clean tools." },
+    { "id": "trouble-light-1", "title": "Leggy shoots", "page": 12, "text": "If stems are long and bendy with small leaves, they need more light. Move to a brighter spot with indirect light. Rotate the shell daily so shoots grow upright." },
+    { "id": "trouble-wet-1", "title": "Too wet or smelly", "page": 13, "text": "If the surface looks shiny or there is a musty smell, you have over misted. Give the shell a day with fewer sprays and better airflow. Harvest what looks fresh. Start a new tray if needed." },
+    { "id": "harvest-1", "title": "When to harvest", "page": 14, "text": "Most microgreens are ready 7 to 14 days after sowing. Look for the first pair of true leaves and sturdy stems. Use clean scissors to snip just above the coir." },
+    { "id": "harvest-2", "title": "After cutting", "page": 15, "text": "Rinse gently in cold water. Pat dry with a clean towel. Enjoy fresh for the best taste and crunch. Store leftovers in a lidded container lined with a dry kitchen towel." },
+    { "id": "eat-ideas-1", "title": "Easy ways to eat microgreens", "page": 16, "text": "Sprinkle on cheese sandwiches, omelettes, baked potatoes, soups and salads. Add them at the end so they stay crisp. Try a small handful on toast with hummus or cream cheese." },
+    { "id": "nutrition-broccoli", "title": "Nutrition. Broccoli microgreens", "page": 17, "text": "Broccoli microgreens provide vitamin C, vitamin K, vitamin A and folate. They also contain sulforaphane. Vitamin C contributes to normal immune function and to protection of cells from oxidative stress. Vitamin K contributes to normal blood clotting and to maintenance of normal bones." },
+    { "id": "nutrition-kale", "title": "Nutrition. Kale microgreens", "page": 18, "text": "Kale microgreens are rich in vitamin K and vitamin A, with vitamin C too. Vitamin K contributes to normal blood clotting and to bone maintenance. Vitamin A contributes to normal vision and to normal skin." },
+    { "id": "nutrition-redcabbage", "title": "Nutrition. Red cabbage microgreens", "page": 19, "text": "Red cabbage microgreens provide vitamin C and colourful plant pigments called anthocyanins. Vitamin C contributes to normal immune function and to protection of cells from oxidative stress." },
+    { "id": "nutrition-radish", "title": "Nutrition. Radish microgreens", "page": 20, "text": "Radish microgreens have vitamin C and peppery glucosinolates. Vitamin C contributes to normal immune function and to reduction of tiredness and fatigue." },
+    { "id": "nutrition-pea", "title": "Nutrition. Pea shoots", "page": 21, "text": "Pea shoots provide vitamin K, vitamin C and folate. Vitamin K contributes to normal blood clotting and to bone maintenance. Folate contributes to normal psychological function and to reduction of tiredness and fatigue." },
+    { "id": "nutrition-sunflower", "title": "Nutrition. Sunflower shoots", "page": 22, "text": "Sunflower shoots provide vitamin E and plant protein. Vitamin E contributes to the protection of cells from oxidative stress." },
+    { "id": "nutrition-rocket", "title": "Nutrition. Rocket", "page": 23, "text": "Rocket microgreens are peppery and contain vitamin K and natural nitrates. Vitamin K contributes to normal blood clotting. Nitrates can support normal blood flow during exercise by nitric oxide pathways." },
+    { "id": "nutrition-onion", "title": "Nutrition. Spring onion microgreens", "page": 24, "text": "Spring onion microgreens bring bright flavour and contain plant compounds such as quercetin. Use as a garnish on savoury dishes. This is a general educational note only." },
+    { "id": "allergens-1", "title": "Allergens", "page": 25, "text": "Check seed families and family sensitivities. Brassicas include broccoli, kale, radish and red cabbage. Sunflower is a seed. Pea is a legume. Alliums include onion. If unsure, ask a grown up." },
+    { "id": "cleanup-1", "title": "Tidying up", "page": 26, "text": "Compost used coir if you can. Wash the coconut shells and scissors with warm soapy water. Dry well before storing for next time." },
+    { "id": "beepaper-1", "title": "Bee friendly paper", "page": 27, "text": "Moisten the bee paper and lay it on a shallow bed of coir or potting soil. Keep it damp and in bright light. Some seeds may sprout indoors. Most will bloom outdoors in spring." },
+    { "id": "bee-outdoors-1", "title": "Planting bee paper outdoors", "page": 28, "text": "If it is autumn or winter, plant the paper in a pot or a patch and let the seeds sleep through winter. They will wake in spring. In colder spells, keep it dry and plant in spring." },
+    { "id": "quest-1", "title": "Explorer Quest and certificate", "page": 29, "text": "Complete simple tasks. Label your shells. Take a photo on day 3, day 7 and harvest day. Try microgreens on a new food. Tick each step and collect your certificate." },
+    { "id": "faq-1", "title": "My seeds did not sprout", "page": 30, "text": "Check dates. Keep the coir evenly damp. Make sure seeds are pressed to the surface and had two to three days in the dark stage. Try a warmer spot away from cold draughts." },
+    { "id": "faq-2", "title": "Windowsill too hot or cold", "page": 31, "text": "Microgreens like steady warmth and light. Avoid radiators and cold draughts. Bright indirect light works best. Rotate the shells daily for even growth." },
+    { "id": "glossary-1", "title": "Glossary", "page": 32, "text": "Coco coir is soft fibre from coconuts used as a growing medium. Dark stage is the first two to three days covered so roots anchor. True leaves are the next set of leaves after the seed leaves." }
+  ],
+
+  "microgreens": [
+    { "name": "Radish", "flavour": "peppery and fresh", "soak": false, "dark_stage_days": 2, "harvest_days": "7 to 10", "seed_density_tsp_per_shell": 1.0, "allergen_family": "brassica", "kid_uses": ["cheese sandwich", "egg mayo toastie", "stir into noodles after cooking"], "notes": "Good first crop. Sprouts fast." },
+    { "name": "Broccoli", "flavour": "mild and green", "soak": false, "dark_stage_days": 2, "harvest_days": "8 to 12", "seed_density_tsp_per_shell": 0.75, "allergen_family": "brassica", "kid_uses": ["mix into pasta sauce after cooking", "top a jacket potato", "sprinkle on soup"] },
+    { "name": "Pea", "flavour": "sweet and crisp", "soak": true, "dark_stage_days": 2, "harvest_days": "10 to 14", "seed_density_tsp_per_shell": 1.5, "allergen_family": "legume", "kid_uses": ["snack shoots as you harvest", "add to wraps", "mix into fried rice off the heat"] },
+    { "name": "Sunflower", "flavour": "nutty and crunchy", "soak": true, "dark_stage_days": 2, "harvest_days": "8 to 12", "seed_density_tsp_per_shell": 1.5, "allergen_family": "sunflower seed", "kid_uses": ["sprinkle on pizza after baking", "mix into hummus toast", "top salads"] },
+    { "name": "Kale", "flavour": "mild brassica", "soak": false, "dark_stage_days": 2, "harvest_days": "8 to 12", "seed_density_tsp_per_shell": 0.75, "allergen_family": "brassica", "kid_uses": ["add to omelette at the end", "top baked potato", "mix into couscous"] },
+    { "name": "Red cabbage", "flavour": "mild with colour", "soak": false, "dark_stage_days": 2, "harvest_days": "8 to 12", "seed_density_tsp_per_shell": 0.75, "allergen_family": "brassica", "kid_uses": ["colourful sprinkle for tacos", "top noodle bowls", "mix with sweetcorn"] },
+    { "name": "Rocket", "flavour": "peppery", "soak": false, "dark_stage_days": 2, "harvest_days": "7 to 10", "seed_density_tsp_per_shell": 0.75, "allergen_family": "brassica", "kid_uses": ["top cheese toast", "mix into pesto pasta off the heat"] },
+    { "name": "Spring onion", "flavour": "fresh and onion like", "soak": false, "dark_stage_days": 2, "harvest_days": "12 to 16", "seed_density_tsp_per_shell": 0.5, "allergen_family": "allium", "kid_uses": ["sprinkle on noodles", "mix with tuna mayo on toast"] },
+    { "name": "Beetroot", "flavour": "earthy and sweet", "soak": true, "dark_stage_days": 2, "harvest_days": "10 to 14", "seed_density_tsp_per_shell": 1.0, "allergen_family": "amaranthaceae", "kid_uses": ["bright colour on salads", "top cream cheese toast"], "notes": "Seeds are multi germ. Soak helps even sprout." },
+    { "name": "Mustard", "flavour": "spicy and warm", "soak": false, "dark_stage_days": 2, "harvest_days": "7 to 10", "seed_density_tsp_per_shell": 0.75, "allergen_family": "brassica", "kid_uses": ["tiny pinch on cheese toast", "mix with milder greens"] },
+    { "name": "Basil", "flavour": "sweet and aromatic", "soak": false, "dark_stage_days": 2, "harvest_days": "12 to 16", "seed_density_tsp_per_shell": 0.5, "allergen_family": "lamiaceae", "kid_uses": ["top pasta after cooking", "on tomato toast"], "notes": "Warm bright spot. Do not over water." },
+    { "name": "Coriander", "flavour": "citrus and fresh", "soak": true, "dark_stage_days": 2, "harvest_days": "14 to 18", "seed_density_tsp_per_shell": 1.0, "allergen_family": "apiaceae", "kid_uses": ["sprinkle on rice", "tacos at the table"] },
+    { "name": "Chard", "flavour": "mild and leafy", "soak": false, "dark_stage_days": 2, "harvest_days": "10 to 14", "seed_density_tsp_per_shell": 0.75, "allergen_family": "amaranthaceae", "kid_uses": ["colour pop on eggs", "mix into couscous"] },
+    { "name": "Pak choi", "flavour": "mild brassica", "soak": false, "dark_stage_days": 2, "harvest_days": "8 to 12", "seed_density_tsp_per_shell": 0.75, "allergen_family": "brassica", "kid_uses": ["ramen topper", "rice bowls"] },
+    { "name": "Mizuna", "flavour": "soft peppery", "soak": false, "dark_stage_days": 2, "harvest_days": "8 to 12", "seed_density_tsp_per_shell": 0.75, "allergen_family": "brassica", "kid_uses": ["mix with lettuce", "top sandwiches"] },
+    { "name": "Fenugreek", "flavour": "maple and nutty", "soak": true, "dark_stage_days": 2, "harvest_days": "8 to 12", "seed_density_tsp_per_shell": 1.0, "allergen_family": "legume", "kid_uses": ["mix into yoghurt dips", "sprinkle on flatbreads"] },
+    { "name": "Dill", "flavour": "fresh and herby", "soak": false, "dark_stage_days": 2, "harvest_days": "12 to 16", "seed_density_tsp_per_shell": 0.5, "allergen_family": "apiaceae", "kid_uses": ["fish finger wraps", "potato salad topper"] },
+    { "name": "Parsley", "flavour": "clean and bright", "soak": false, "dark_stage_days": 2, "harvest_days": "14 to 18", "seed_density_tsp_per_shell": 0.75, "allergen_family": "apiaceae", "kid_uses": ["sprinkle on pasta", "mix into couscous"] },
+    { "name": "Amaranth", "flavour": "mild and earthy", "soak": false, "dark_stage_days": 2, "harvest_days": "10 to 14", "seed_density_tsp_per_shell": 0.5, "allergen_family": "amaranthaceae", "kid_uses": ["colour sprinkle on cream cheese"], "notes": "Tiny seeds. Gentle mist." },
+    { "name": "Sorrel", "flavour": "lemon bright", "soak": false, "dark_stage_days": 2, "harvest_days": "12 to 16", "seed_density_tsp_per_shell": 0.5, "allergen_family": "polygonaceae", "kid_uses": ["tiny pinch on fish", "mix with milder greens"], "notes": "Sharp taste. Use small amounts." }
+  ],
+
+  "how_to": {
+    "prepare": ["Wash hands and tools.", "Soak pea and sunflower seeds for six to eight hours.", "Expand coir with small amounts of water. Keep it damp."],
+    "sow": ["Spread coir level in the shell.", "Scatter seeds in a single layer.", "Press seeds to make contact with coir."],
+    "dark_stage": ["Cover loosely for two to three days.", "Mist if the surface looks dry.", "Keep the cover clean."],
+    "light_stage": ["Move to bright indirect light.", "Rotate the shell daily.", "Keep coir damp. Not wet."],
+    "harvest": ["Use clean scissors.", "Snip above the coir.", "Rinse, dry and enjoy fresh."]
   },
-  {
-    "id": "kit-1",
-    "title": "What’s in the kit?",
-    "page": 4,
-    "text": "2 half coconut shell planters (empty); 10 coco-coir pellets; fine mist spray bottle; 3 seed tins (choose from radish, broccoli, pea, sunflower, kale, red cabbage, rocket, spring onion); wooden spoon for seeds and spreading coir; plant labels; Microgreen Explorer’s Guide; bee-friendly seeded paper; quest/certificate."
+
+  "troubleshooting": [
+    { "name": "Leggy shoots", "signs": "tall and bendy with tiny leaves", "fix": "give more light and rotate daily" },
+    { "name": "Mould risk", "signs": "fuzzy layer across the surface with a musty smell", "fix": "reduce misting and add airflow" },
+    { "name": "Dry tray", "signs": "droopy leaves and dry coir", "fix": "mist more often in warm rooms" }
+  ],
+
+  "faqs": [
+    { "q": "Do I need a spray bottle", "a": "A fine mist makes watering gentle. If you do not have one, drip water slowly from a spoon." },
+    { "q": "Can I reuse coir", "a": "It is better to compost used coir and start fresh for clean growth." },
+    { "q": "Do I need fertiliser", "a": "No. Seeds have enough energy to grow to the microgreen stage." }
+  ],
+
+  "nutrients_reference": {
+    "note": "General education only. Not medical advice.",
+    "vitamins": {
+      "Vitamin C": "contributes to normal immune function",
+      "Vitamin K": "contributes to normal blood clotting and to maintenance of normal bones",
+      "Vitamin A": "contributes to normal vision and to maintenance of normal skin",
+      "Folate": "contributes to normal psychological function"
+    },
+    "minerals": {
+      "Iron": "contributes to reduction of tiredness and fatigue",
+      "Calcium": "contributes to maintenance of normal bones and teeth"
+    }
   },
-  {
-    "id": "safety-1",
-    "title": "Safety first",
-    "page": 5,
-    "text": "Wash hands and tools. Supervise children with water and scissors. Keep the growing area tidy and dry around the shells. Check seed allergies: brassicas, sunflower, pea/legume, and alliums."
-  },
-  {
-    "id": "setup-1",
-    "title": "Prepare the coco coir",
-    "page": 6,
-    "text": "Place pellets in a clean bowl. Add water a little at a time until they fluff up. Use the wooden spoon to spread coir evenly in your coconut shell, about 1–2 cm deep. The coir should be damp, not soggy."
-  },
-  {
-    "id": "sowing-1",
-    "title": "Sowing your seeds",
-    "page": 7,
-    "text": "Sprinkle seeds in a single, even layer—no big piles. Press them gently so they touch the coir. Mist lightly so all seeds are damp. Label your shells so you remember what’s what."
-  },
-  {
-    "id": "darkstage-1",
-    "title": "Dark stage (2–3 days)",
-    "page": 8,
-    "text": "Cover the shell loosely (a clean plate or card) to create a cosy ‘dark stage’. This helps roots grab hold. Peek daily and mist if the surface looks dry. Keep it slightly damp."
-  },
-  {
-    "id": "lightstage-1",
-    "title": "Into the light",
-    "page": 9,
-    "text": "When you see sprouts pushing up, remove the cover and give bright, indirect light. A sunny windowsill works; avoid strong midday sun. Mist to keep the coir damp, not wet."
-  },
-  {
-    "id": "watering-1",
-    "title": "Watering basics",
-    "page": 10,
-    "text": "Mist once or twice a day depending on room warmth. If leaves look droopy or coir feels dry, add a few extra mists. If it looks soggy or smells off, ease up and let it air."
-  },
-  {
-    "id": "trouble-root-1",
-    "title": "Roots or mould?",
-    "page": 11,
-    "text": "Root hairs look like tiny white fuzz along stems—normal and friendly. Fuzzy patches that spread across the surface and smell unpleasant may be mould. Improve airflow, avoid over-watering, and clean tools."
-  },
-  {
-    "id": "trouble-light-1",
-    "title": "Leggy shoots",
-    "page": 12,
-    "text": "If stems are long and bendy with small leaves, they need more light. Move to a brighter spot (indirect light) and rotate the shell daily so shoots grow upright."
-  },
-  {
-    "id": "trouble-wet-1",
-    "title": "Too wet or smelly?",
-    "page": 13,
-    "text": "If the surface looks shiny or there’s a musty smell, you’re over-misting. Give the shell a day with fewer sprays and better airflow. Harvest what looks fresh and start a new tray if needed."
-  },
-  {
-    "id": "harvest-1",
-    "title": "When to harvest",
-    "page": 14,
-    "text": "Most microgreens are ready 7–14 days after sowing. Look for the first pair of true leaves and sturdy stems. Use clean scissors to snip just above the coir."
-  },
-  {
-    "id": "harvest-2",
-    "title": "After cutting",
-    "page": 15,
-    "text": "Rinse gently in cold water and pat dry with a clean towel. Enjoy fresh for the best taste and crunch. Store leftovers in a lidded container lined with a dry kitchen towel."
-  },
-  {
-    "id": "eat-ideas-1",
-    "title": "Easy ways to eat microgreens",
-    "page": 16,
-    "text": "Sprinkle on cheese sandwiches, omelettes, baked potatoes, soups, and salads. Add them at the end so they stay crisp. Try a small handful on toast with hummus or cream cheese."
-  },
-  {
-    "id": "nutrition-broccoli",
-    "title": "Nutrition — Broccoli microgreens",
-    "page": 17,
-    "text": "Broccoli microgreens provide vitamin C, K, A and folate and contain sulforaphane. Vitamin C contributes to normal immune function and protection of cells from oxidative stress. Vitamin K contributes to normal blood clotting and maintenance of normal bones."
-  },
-  {
-    "id": "nutrition-kale",
-    "title": "Nutrition — Kale microgreens",
-    "page": 18,
-    "text": "Kale microgreens are rich in vitamin K and A, with vitamin C too. Vitamin K contributes to normal blood clotting and bone maintenance. Vitamin A contributes to normal vision and skin."
-  },
-  {
-    "id": "nutrition-redcabbage",
-    "title": "Nutrition — Red cabbage microgreens",
-    "page": 19,
-    "text": "Red cabbage microgreens provide vitamin C and colourful plant pigments (anthocyanins). Vitamin C contributes to normal immune function and protection of cells from oxidative stress."
-  },
-  {
-    "id": "nutrition-radish",
-    "title": "Nutrition — Radish microgreens",
-    "page": 20,
-    "text": "Radish microgreens have vitamin C and peppery glucosinolates. Vitamin C contributes to normal immune function and reduction of tiredness and fatigue."
-  },
-  {
-    "id": "nutrition-pea",
-    "title": "Nutrition — Pea shoots",
-    "page": 21,
-    "text": "Pea shoots provide vitamin K, C and folate. Vitamin K contributes to normal blood clotting and bone maintenance; folate contributes to normal psychological function and reduction of tiredness and fatigue."
-  },
-  {
-    "id": "nutrition-sunflower",
-    "title": "Nutrition — Sunflower shoots",
-    "page": 22,
-    "text": "Sunflower shoots provide vitamin E and plant protein. Vitamin E contributes to the protection of cells from oxidative stress."
-  },
-  {
-    "id": "nutrition-rocket",
-    "title": "Nutrition — Rocket (arugula)",
-    "page": 23,
-    "text": "Rocket microgreens are peppery and contain vitamin K and naturally occurring nitrates. Vitamin K contributes to normal blood clotting; nitrates can support normal blood flow during exercise via nitric oxide pathways."
-  },
-  {
-    "id": "nutrition-onion",
-    "title": "Nutrition — Spring onion microgreens",
-    "page": 24,
-    "text": "Spring onion microgreens bring bright flavour and contain plant compounds such as quercetin. Use as a garnish on savoury dishes. (General educational note only.)"
-  },
-  {
-    "id": "allergens-1",
-    "title": "Allergens",
-    "page": 25,
-    "text": "Check seeds and family sensitivities: brassicas (broccoli, kale, radish, red cabbage, rocket), sunflower, pea/legume, alliums (onion). If unsure, ask a grown-up or health professional."
-  },
-  {
-    "id": "cleanup-1",
-    "title": "Tidying up",
-    "page": 26,
-    "text": "Compost used coir if you can. Wash the coconut shells, spray bottle, and scissors with warm soapy water. Dry well before storing for next time."
-  },
-  {
-    "id": "beepaper-1",
-    "title": "Bee-friendly paper (planting)",
-    "page": 27,
-    "text": "Moisten the bee paper and lay it on a shallow bed of coir or potting soil. Keep it damp and in bright light. Some seeds may sprout indoors; most will bloom outdoors in spring."
-  },
-  {
-    "id": "bee-outdoors-1",
-    "title": "Planting bee paper outdoors",
-    "page": 28,
-    "text": "If it’s autumn or winter, you can plant the paper in a pot or a patch and let the seeds sleep through winter, waking in spring. In colder spells, keep it dry and plant in spring."
-  },
-  {
-    "id": "quest-1",
-    "title": "Explorer Quest & certificate",
-    "page": 29,
-    "text": "Complete simple tasks: label your shells; take a photo of day 3, day 7, and harvest day; try microgreens on a new food. Tick each step and collect your Mini Green Grower certificate."
-  },
-  {
-    "id": "faq-1",
-    "title": "FAQ — My seeds didn’t sprout",
-    "page": 30,
-    "text": "Check dates and keep the coir evenly damp. Make sure seeds are pressed to the surface and had 2–3 days in the dark stage. Try a warmer spot away from cold drafts."
-  },
-  {
-    "id": "faq-2",
-    "title": "FAQ — Windowsill too hot or cold?",
-    "page": 31,
-    "text": "Microgreens like steady warmth and light. Avoid radiators and cold draughts. Bright, indirect light works best; rotate the shells daily for even growth."
-  },
-  {
-    "id": "glossary-1",
-    "title": "Glossary",
-    "page": 32,
-    "text": "Coco coir: soft fibre from coconuts used as a growing medium. Dark stage: first 2–3 days covered so roots anchor. True leaves: the next set of leaves after the seed leaves."
+
+  "allergens": [
+    { "family": "brassica", "examples": ["broccoli", "kale", "radish", "red cabbage", "rocket", "mustard", "pak choi", "mizuna"] },
+    { "family": "legume", "examples": ["pea", "fenugreek"] },
+    { "family": "sunflower seed", "examples": ["sunflower"] },
+    { "family": "allium", "examples": ["spring onion"] },
+    { "family": "apiaceae", "examples": ["parsley", "dill", "coriander"] },
+    { "family": "amaranthaceae", "examples": ["beetroot", "chard", "amaranth"] },
+    { "family": "polygonaceae", "examples": ["sorrel"] },
+    { "family": "lamiaceae", "examples": ["basil"] }
+  ],
+
+  "templates": {
+    "medical_refusal": "I cannot give medical advice. I can share general nutrition information about microgreens.",
+    "pii_refusal": "Please keep personal details private. Do not share phone numbers, emails, postcodes, addresses or social handles.",
+    "greetings": [
+      "Hello. Ready to grow together",
+      "Hi Mini Grower. What would you like to know",
+      "Welcome. I am here to help with your kit",
+      "Hey there. Ask me anything about your microgreens",
+      "Good to see you. How can I help today",
+      "Hello. What are you growing first",
+      "Hi. Shall we start with sowing or watering",
+      "Welcome back. Ready for the next step",
+      "Hi there. Want to check your harvest time",
+      "Hello. Need tips for light or dark stage",
+      "Hi. Would you like a simple growing checklist",
+      "Welcome. Ask about seeds, soil and light",
+      "Hello. I can list what is in your kit",
+      "Hi. I can share easy ways to eat microgreens",
+      "Hello. Would you like help choosing a seed"
+    ]
   }
-]
+}
