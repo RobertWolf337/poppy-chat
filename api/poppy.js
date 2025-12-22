@@ -9,6 +9,28 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 // Optional: env override; falls back to your provided channel ID
 const DEFAULT_SLACK_CHANNEL_ID = "C0A4WE56K19";
 
+async function notifySlack({ title = "Poppy alert", text = "" }) {
+  const token = process.env.SLACK_BOT_TOKEN;
+  const channel = process.env.SLACK_CHANNEL_ID;
+  if (!token || !channel) return;
+
+  try {
+    await fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        channel,
+        text: `*${title}*\n${text}`.slice(0, 2900),
+        mrkdwn: true,
+      }),
+    });
+  } catch {}
+}
+
+
 // ---------------------- FULL INSTRUCTOR PERSONA ----------------------
 const SYSTEM = `
 You are Poppy, a friendly microgreen character who chats with children on the Mini Green Growers website.
